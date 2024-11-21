@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبقري الرياضيات</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-image: url('main-page-background.jpg'); /* Main Page Background */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+        .choices button, .operation-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: #e7e7e7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .choices button:hover, .operation-button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .timer {
+            font-size: 1.5rem;
+            color: #dc3545;
+            margin: 10px;
+        }
+        .game-over, .game-win {
+            color: red;
+            font-size: 2rem;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .game-win {
+            color: green;
+        }
+        .home-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: #218838;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>عبقري الرياضيات</h1>
+        <div id="main-menu">
+            <h2>اختر نوع المسائل:</h2>
+            <button class="operation-button" onclick="startGame('+')">جمع</button>
+            <button class="operation-button" onclick="startGame('-')">طرح</button>
+            <button class="operation-button" onclick="startGame('*')">ضرب</button>
+            <button class="operation-button" onclick="startGame('/')">قسمة</button>
+        </div>
+
+        <div id="game-container" style="display: none;">
+            <div class="question">ما هو ناتج:</div>
+            <div class="choices"></div>
+            <div class="timer">الوقت المتبقي: <span id="time">60</span> ثانية</div>
+            <div class="game-over" id="game-over"></div>
+            <div class="game-win" id="game-win"></div>
+            <button class="home-button" id="home-button">العودة للصفحة الرئيسية</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
